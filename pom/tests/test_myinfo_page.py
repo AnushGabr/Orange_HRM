@@ -14,7 +14,6 @@ class TestMyInfo:
         my_info.select_date()
         my_info.choose_nationality()
         my_info.select_marital_status_field()
-        # my_info.gender_field()
         my_info.save_all_fields_info()
 
         my_info.wait_for_page_load()
