@@ -8,7 +8,7 @@ from pom.base.selenium_driver import SeleniumDriver
 
 class Wait:
 
-    def __init__(self, driver, timeout):
+    def __init__(self, driver, timeout=30):
         self.driver: WebDriver = driver
         self.wait = WebDriverWait(self.driver, timeout)
 
@@ -20,7 +20,7 @@ class Wait:
             print('element is not found')
         return element
 
-    def wait_for_element_to_be_clickable(self, locator,):
+    def wait_for_element_to_be_clickable(self, locator):
         element = None
         try:
             element = self.wait.until(condition.element_to_be_clickable(locator))

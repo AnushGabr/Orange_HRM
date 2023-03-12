@@ -1,5 +1,6 @@
 import selenium.common.exceptions as Ex
 from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.support.select import Select
 
 
 class SeleniumDriver:
@@ -54,5 +55,17 @@ class SeleniumDriver:
                 print("Element is not displayed: Error: " + error)
 
         return displayed
+
+    def is_element_selected(self, locator):
+        selected = False
+
+        if locator:
+            element = self.driver.find_element(*locator)
+            try:
+                selected = element.is_selected()
+            except Ex.NoSuchElementException:
+                print('Element is not selected')
+
+        return selected
 
 
