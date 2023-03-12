@@ -72,12 +72,9 @@ class MyInfoPage(BasePage):
     def select_date(self):
         element = self.get_wait().wait_for_element_to_be_clickable(self.CALENDAR_FIELD)
         element.click()
-        # self.driver.execute_script("arguments[0].click();", element)
-        # calendar_div = self.get_wait().wait_for_element_to_be_clickable(self.CALENDAR_OPENED_WHOLE_DIV)
-        month_li = self.get_wait().wait_for_element_to_be_clickable(self.SELECT_MONTH_DIV)
-        month_li.click()
-        # month_dyn_div = self.get_wait().wait_for_element_to_be_clickable(self.MONTH_DROPDOWN_DIV)
-        # option_list_months = self.find_list_of_elements(self.months)
+
+        month_selection_part = self.get_wait().wait_for_element_to_be_clickable(self.SELECT_MONTH_DIV)
+        month_selection_part.click()
         option_list_months = self.get_wait().wait_for_list_size_change(self.SINGLE_MONTH_ID_FOR_ARRAY_CREATION, size=12)
 
         for month in option_list_months:
@@ -88,10 +85,7 @@ class MyInfoPage(BasePage):
 
         year_selection_part = self.get_wait().wait_for_element_to_be_clickable(self.SELECT_YEAR_DIV)
         year_selection_part.click()
-        year_and_month_div = self.find_list_of_elements(self.MONTHS_AND_YEARS_DIV)
-        only_year_div = year_and_month_div[1]
-        year = self.get_wait().wait_for_element_to_be_clickable(only_year_div)
-        # year_dyn_div = self.get_wait().wait_for_element_to_be_clickable(self.CALENDAR_DYNAMIC_YEAR)
+
         option_list_year = self.find_list_of_elements(self.SINGLE_YEAR_ID_FOR_ARRAY_CREATION)
 
         for year in option_list_year:
@@ -100,7 +94,6 @@ class MyInfoPage(BasePage):
                 year.click()
                 break
 
-        # days = self.get_wait().wait_for_element_to_be_clickable(self.SINGLE_DAY_ID_FOR_ARRAY_CREATION)
         option_list_day = self.find_list_of_elements(self.MONTH_DAYS)
 
         for option in option_list_day:
