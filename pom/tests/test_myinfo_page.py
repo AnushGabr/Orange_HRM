@@ -22,4 +22,4 @@ class TestMyInfo:
         assert my_info.is_selected_date_correct()
         assert my_info.is_nationality_field_correct()
         assert my_info.is_marital_status_correct()
-        # assert my_info.gender_field_correct()
+
