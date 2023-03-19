@@ -43,10 +43,10 @@ class MyInfoPage(BasePage):
         navigation_panel.go_to("My_Info")
 
     # TODO: shift to selenium-driver
-    def clear_field(self, el):
-        el.click()
-        el.send_keys(Keys.CONTROL + 'a')
-        el.send_keys(Keys.BACK_SPACE)
+    # def clear_field(self, el):
+    #     el.click()
+    #     el.send_keys(Keys.CONTROL + 'a')
+    #     el.send_keys(Keys.BACK_SPACE)
 
     def fill_first_username_field(self):
         element = self.get_wait().wait_for_element_to_be_clickable(self.FIRST_INPUT_USERNAME)

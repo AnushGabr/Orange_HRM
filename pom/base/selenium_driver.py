@@ -1,4 +1,5 @@
 import selenium.common.exceptions as Ex
+from selenium.webdriver import Keys
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.select import Select
 
@@ -23,7 +24,6 @@ class SeleniumDriver:
 
         return element
 
-
     def find_list_of_elements(self, locator):
         elements = None
         try:
@@ -43,6 +43,18 @@ class SeleniumDriver:
                 print(error)
                 return False
 
+        return False
+
+    def clear_field(self, element):
+        if element:
+            try:
+                element.click()
+                element.send_keys(Keys.CONTROL + 'a')
+                element.send_keys(Keys.BACK_SPACE)
+                return True
+            except:
+                print('NoSuchElement')
+                return False
         return False
 
     def is_element_displayed(self, locator):
@@ -68,5 +80,3 @@ class SeleniumDriver:
                 print('Element is not selected')
 
         return selected
-
-
