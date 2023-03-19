@@ -35,8 +35,6 @@ class MyInfoPage(BasePage):
     NATIONALITY_AND_MARITAL_INPUT_FIELD = (By.CSS_SELECTOR, ".oxd-select-text .oxd-select-text-input")
     COUNTRIES_AND_MARITAL_DIV = (By.CSS_SELECTOR, "div[role='listbox']")
     COUNTRIES_LIST = (By.XPATH, "//div[@class='oxd-select-option']//span")
-
-
     SAVE_BUTTON = (By.CSS_SELECTOR, ".oxd-button")
 
     def init_my_info_page(self):

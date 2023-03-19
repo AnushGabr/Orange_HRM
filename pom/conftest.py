@@ -21,3 +21,4 @@ def log_in(request, set_up):
 
 def pytest_addoption(parser):
     parser.addoption("--browser")
+

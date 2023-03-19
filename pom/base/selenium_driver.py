@@ -23,6 +23,7 @@ class SeleniumDriver:
 
         return element
 
+
     def find_list_of_elements(self, locator):
         elements = None
         try:
