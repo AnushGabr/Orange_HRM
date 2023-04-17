@@ -53,7 +53,7 @@ class SeleniumDriver:
                 element.send_keys(Keys.BACK_SPACE)
                 return True
             except:
-                print('NoSuchElement')
+                print('NoSuchElement clear field')
                 return False
         return False
 
