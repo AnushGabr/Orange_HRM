@@ -59,4 +59,18 @@ class Wait:
         except:
             print('Document is not ready yet')
 
+    def wait_for_elements(self, locator):
+        elements = None
+        try:
+            elements = self.wait.until(condition.presence_of_all_elements_located(locator))
+        except NoSuchElementException:
+            print('element is not found')
+        return elements
 
+    def wait_for_element_to_be_visible(self, locator):
+        element = None
+        try:
+            element = self.wait.until(condition.visibility_of_element_located(locator))
+        except TimeoutException:
+            print('element not found')
+        return element
