@@ -26,6 +26,3 @@ class TestAdmin:
         assert admin.check_address_is_correct()
         assert admin.check_nationality_correct()
         assert admin.check_textarea()
-
-
-
